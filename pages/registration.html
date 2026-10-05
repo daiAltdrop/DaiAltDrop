@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <title>LEROS — Всім нам треба любов</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Merriweather:wght@700;900&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <svg viewBox="0 0 32 32" aria-hidden="true">
+        <defs>
+          <linearGradient id="lg" x1="0" y1="0" x2="1" y2="1">
+            <stop offset="0" stop-color="#B8526F" />
+            <stop offset="1" stop-color="#A84B65" />
+          </linearGradient>
+        </defs>
+        <rect width="32" height="32" rx="9" fill="url(#lg)" />
+        <path d="M16 23.500l-5.800-5.800a3.700 3.700 0 0 1 5.800-4.500 3.700 3.700 0 0 1 5.800 4.500z" fill="#F5EEF0" />
+      </svg>
+      LEROS
+    </div>
+    <nav aria-label="Навігація">
+      <span>Продукт</span>
+      <span>Безпека</span>
+      <span>🌐 Мова</span>
+      <button class="theme" id="theme" type="button" aria-label="Перемкнути тему">
+        <svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round">
+          <circle cx="12" cy="12" r="4" />
+          <path d="M12 2v2M12 20v2M4.900 4.900l1.400 1.400M17.700 17.700l1.400 1.400M2 12h2M20 12h2M4.900 19.100l1.400-1.400M17.700 6.300l1.400-1.400" />
+        </svg>
+        <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="M21 12.800A9 9 0 1 1 11.200 3a7 7 0 0 0 9.800 9.800z" />
+        </svg>
+      </button>
+    </nav>
+  </header>
+
+  <main class="hero">
+    <h1>Всім нам треба любов.</h1>
+    <svg viewBox="0 0 300 250" role="img" aria-label="Телефон зі свайпом профілів">
+      <rect class="c-back" x="30" y="55" width="105" height="150" rx="12" fill="#3a3044" stroke="#F5EEF0" stroke-width="3" transform="rotate(-6 80 130)" />
+      <rect class="c-phone" x="100" y="25" width="100" height="190" rx="16" fill="#251e2d" stroke="#F5EEF0" stroke-width="4" />
+      <rect x="108" y="40" width="84" height="150" rx="8" fill="#B8526F" />
+      <rect class="c-ink" x="145" y="30" width="30" height="6" rx="3" fill="#F5EEF0" />
+      <g transform="rotate(5 200 110)">
+        <rect class="c-card" x="140" y="40" width="108" height="140" rx="10" fill="#F5EEF0" stroke="#F5EEF0" stroke-width="3" />
+        <rect x="148" y="48" width="92" height="82" rx="6" fill="#fde2d3" />
+        <circle cx="178" cy="82" r="14" fill="#7a4a30" />
+        <circle cx="212" cy="80" r="14" fill="#5b3522" />
+        <rect x="164" y="94" width="26" height="30" rx="10" fill="#e9967a" />
+        <rect x="198" y="94" width="28" height="30" rx="10" fill="#b8643c" />
+        <rect x="148" y="140" width="70" height="6" rx="3" fill="#ddd" />
+        <rect x="148" y="152" width="50" height="6" rx="3" fill="#ddd" />
+      </g>
+      <path d="M118 112 C150 98 175 112 195 122" fill="none" stroke="#F5EEF0" stroke-opacity=".85" stroke-width="12" stroke-linecap="round" />
+      <circle cx="246" cy="118" r="15" fill="#F5EEF0" stroke="#A84B65" stroke-width="3" />
+      <path d="M246 126 l-7-7 a4.2 4.2 0 0 1 7-5 a4.2 4.2 0 0 1 7 5z" fill="#A84B65" />
+      <path d="M40 235 C55 170 70 150 95 165 L110 235z" fill="var(--skin)" stroke="#1b1622" stroke-width="3" />
+      <path d="M185 235 C195 190 215 185 235 195 L255 235z" fill="var(--skin)" stroke="#1b1622" stroke-width="3" />
+      <rect class="c-ink" x="112" y="196" width="76" height="10" rx="5" fill="#F5EEF0" />
+    </svg>
+    <div class="cta">
+      <button class="btn off" disabled aria-disabled="true">Завантажити застосунок</button>
+      <button class="btn dark" id="open">Створити обліковий запис</button>
+    </div>
+  </main>
+
+  <div class="overlay" id="overlay" role="dialog" aria-modal="true" aria-label="Реєстрація">
+    <div class="modal">
+      <div class="top">
+        <button class="back" id="back" aria-label="Назад" style="visibility:hidden">←</button>
+        <div class="bar"><i id="prog"></i></div>
+        <button class="close" id="close" aria-label="Закрити">✕</button>
+      </div>
+      <div class="steps">
+        <section class="step active" data-step="1">
+          <h2>Створіть обліковий запис</h2>
+          <p class="sub">Оберіть, як вам зручніше розпочати.</p>
+          <button class="alt" id="google">
+            <svg width="18" height="18" viewBox="0 0 48 48">
+              <path fill="#EA4335" d="M24 9.5c3.5 0 6.6 1.2 9 3.5l6.7-6.7C35.700 2.400 30.300 0 24 0 14.600 0 6.500 5.400 2.600 13.200l7.800 6.100C12.300 13.500 17.700 9.500 24 9.500z" />
+              <path fill="#4285F4" d="M46.500 24.500c0-1.600-.1-3.100-.4-4.500H24v8.500h12.700c-.6 3-2.300 5.500-4.800 7.200l7.600 5.900c4.400-4.100 7-10.100 7-17.100z" />
+              <path fill="#FBBC05" d="M10.400 28.700A14.500 14.500 0 0 1 9.500 24c0-1.600.3-3.200.9-4.700l-7.800-6.100A24 24 0 0 0 0 24c0 3.900.9 7.500 2.600 10.800l7.800-6.100z" />
+              <path fill="#34A853" d="M24 48c6.500 0 11.900-2.100 15.900-5.800l-7.600-5.900c-2.100 1.400-4.900 2.300-8.300 2.300-6.300 0-11.700-4.200-13.600-9.900l-7.800 6.100C6.500 42.600 14.600 48 24 48z" />
+            </svg>
+            Продовжити з Google
+          </button>
+          <button class="alt mail" data-go="2">Зареєструватися через пошту</button>
+        </section>
+
+        <section class="step" data-step="2">
+          <svg class="cupid hide" id="cupid" viewBox="0 0 120 110" aria-hidden="true">
+            <g fill="#fff" stroke="#c9ced6" stroke-width="2">
+              <path d="M34 62 C10 40 6 62 18 74 C24 80 32 76 38 72z" />
+              <path d="M86 62 C110 40 114 62 102 74 C96 80 88 76 82 72z" />
+            </g>
+            <circle cx="60" cy="64" r="32" fill="var(--skin)" />
+            <path d="M42 38 C48 26 62 24 70 30 C58 28 50 34 42 38z" fill="#d9a441" />
+            <circle cx="60" cy="30" r="5" fill="#d9a441" />
+            <circle cx="41" cy="76" r="5" fill="#f9a8a8" opacity=".7" />
+            <circle cx="79" cy="76" r="5" fill="#f9a8a8" opacity=".7" />
+            <path d="M52 82 Q60 88 68 82" stroke="#a5503a" stroke-width="2.500" fill="none" stroke-linecap="round" />
+            <g id="eyes">
+              <circle cx="47" cy="62" r="8" fill="#fff" />
+              <circle cx="73" cy="62" r="8" fill="#fff" />
+              <circle class="pupil" id="pl" cx="47" cy="62" r="3.800" fill="#111" />
+              <circle class="pupil" id="pr" cx="73" cy="62" r="3.800" fill="#111" />
+            </g>
+            <g class="hand hl" style="transform-origin:47px 62px">
+              <ellipse cx="47" cy="62" rx="14" ry="11" fill="var(--skin)" stroke="#d09a6e" stroke-width="2" />
+              <path d="M38 58 h18 M38 63 h18" stroke="#d09a6e" stroke-width="1.500" />
+            </g>
+            <g class="hand hr" style="transform-origin:73px 62px">
+              <ellipse cx="73" cy="62" rx="14" ry="11" fill="var(--skin)" stroke="#d09a6e" stroke-width="2" />
+              <path d="M64 58 h18 M64 63 h18" stroke="#d09a6e" stroke-width="1.500" />
+            </g>
+          </svg>
+          <h2>Пошта та пароль</h2>
+          <p class="sub">Купідон нічого не підгляне.</p>
+          <label for="email">Email</label>
+          <input id="email" type="email" autocomplete="email" placeholder="name@example.com">
+          <label for="pass">Пароль</label>
+          <div class="pw">
+            <input id="pass" type="password" autocomplete="new-password" placeholder="Мінімум 8 символів">
+            <button class="eye" id="eye" type="button" aria-label="Показати пароль">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <path d="M1 12s4-7 11-7 11 7 11 7-4 7-11 7S1 12 1 12z" />
+                <circle cx="12" cy="12" r="3" />
+                <path id="slash" d="M3 3l18 18" />
+              </svg>
+            </button>
+          </div>
+          <div class="err" id="err2"></div>
+          <button class="btn red" id="next2" style="margin-top:14px" disabled>Продовжити</button>
+        </section>
+
+        <section class="step" data-step="3">
+          <h2>Підтвердіть телефон</h2>
+          <p class="sub">Ми надішлемо SMS з кодом.</p>
+          <label for="phone">Номер телефону</label>
+          <input id="phone" type="tel" inputmode="tel" autocomplete="tel" placeholder="+380 50 123 45 67">
+          <div class="reveal" id="codeBox">
+            <label for="code">Код верифікації з SMS</label>
+            <input id="code" inputmode="numeric" maxlength="6" placeholder="••••••">
+            <p class="hint">У прототипі підійде будь-який код із 4–6 цифр.</p>
+            <button class="btn red" id="next3" style="margin-top:14px" disabled>Підтвердити</button>
+          </div>
+        </section>
+
+        <section class="step" data-step="4">
+          <h2>Розкажіть про себе</h2>
+          <p class="sub">Користуватися LEROS можна з 14 років.</p>
+          <div class="row">
+            <div><label for="fn">Ім'я</label><input id="fn" autocomplete="given-name"></div>
+            <div><label for="ln">Прізвище</label><input id="ln" autocomplete="family-name"></div>
+          </div>
+          <label>Дата народження</label>
+          <div class="row">
+            <select id="dd" aria-label="День"></select>
+            <select id="mm" aria-label="Місяць"></select>
+            <select id="yy" aria-label="Рік"></select>
+          </div>
+          <p class="hint" id="maxHint"></p>
+          <button class="btn red" id="next4" style="margin-top:14px" disabled>Продовжити</button>
+        </section>
+
+        <section class="step" data-step="5">
+          <h2>Вам потрібно пройти верифікацію для підтвердження особи</h2>
+          <p class="sub">Оберіть документ для підтвердження віку та фотографії</p>
+          <div class="docs">
+            <label class="doc"><input type="radio" name="doc" value="ID-картка">ID-картка</label>
+            <label class="doc"><input type="radio" name="doc" value="Закордонний паспорт">Закордонний паспорт</label>
+            <label class="doc"><input type="radio" name="doc" value="Водійське посвідчення">Водійське посвідчення</label>
+          </div>
+          <div class="reveal" id="dropBox">
+            <div class="drop" id="drop" tabindex="0" role="button">
+              <b>Завантажити фото документа</b>Перетягніть файл сюди або натисніть, щоб обрати
+              <div id="prev"></div>
+            </div>
+            <input type="file" id="file" accept="image/*" hidden>
+          </div>
+          <button class="btn red" id="finish" style="margin-top:16px" disabled>Завершити реєстрацію</button>
+        </section>
+
+        <section class="step" data-step="6">
+          <div class="success">
+            <div class="ok">💘</div>
+            <h2>Ласкаво просимо до LEROS!</h2>
+            <p class="sub" id="welcome">Ваш обліковий запис створено.</p>
+            <button class="btn red" id="done">Готово</button>
+          </div>
+        </section>
+      </div>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
