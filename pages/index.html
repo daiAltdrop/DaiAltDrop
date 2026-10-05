@@ -3,76 +3,70 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LEROS — Профілі</title>
+    <title>LEROS — Головна</title>
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
-<body>
+<body class="home-body">
+    <div class="page-shell">
+        <header class="topbar">
+            <a href="index.html" class="brand" aria-label="На головну">
+                <span class="brand-mark"><i class="fa-solid fa-heart"></i></span>
+                <span class="brand-name">LEROS</span>
+            </a>
 
-    <!-- Header / Navbar -->
-    <header class="app-header">
-        <div class="header-container">
-            <div class="brand-logo">
-                <div class="logo-icon">
-                    <i class="fa-solid fa-heart"></i>
+            <nav class="main-nav" aria-label="Основна навігація">
+                <a href="index.html" class="active">Головна</a>
+                <a href="index.html">Продукти</a>
+                <a href="index.html">Команда</a>
+                <a href="altu-case.html">Кейси</a>
+                <a href="index.html">Блог</a>
+                <a href="index.html">Контакти</a>
+                <a href="index.html">Преміум</a>
+            </nav>
+
+            <div class="tools" aria-label="Інструменти">
+                <button class="tool-btn" aria-label="Пошук"><i class="fa-solid fa-magnifying-glass"></i></button>
+                <button class="tool-btn" aria-label="Вибране"><i class="fa-solid fa-bag-shopping"></i></button>
+                <button class="tool-btn" aria-label="Профіль"><i class="fa-solid fa-user"></i></button>
+            </div>
+        </header>
+
+        <main class="home-main">
+            <section class="hero-panel" aria-label="Розділ стилів">
+                <div class="hero-center">
+                    <div class="hero-shape"></div>
+                    <h1>ДОСЛІДЖУЙ<br>УНІКАЛЬНІ СТИЛІ</h1>
+                    <a href="altu-case.html" class="primary-btn">СТАРТУВАТИ</a>
                 </div>
-                <span class="logo-text">LEROS</span>
-            </div>
+            </section>
 
-            <div class="header-actions">
-                <button class="icon-btn" aria-label="Пошук"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <button class="icon-btn" aria-label="Сповіщення"><i class="fa-solid fa-bell"></i></button>
-                <button class="icon-btn avatar-btn" aria-label="Профіль"><i class="fa-solid fa-user"></i></button>
-            </div>
-        </div>
-    </header>
+            <section class="showcase" aria-label="Показ стилів">
+                <h2>ЗНАЙОМСТВА ЗІ СТИЛЕМ</h2>
 
-    <!-- Main Container -->
-    <main class="main-layout">
-
-        <!-- Feed Content Area -->
-        <section class="content-area">
-
-            <!-- Category Filter Bar -->
-            <div class="category-bar">
-                <span class="category-label">Категорії:</span>
-                <button class="chip active">Всі</button>
-                <button class="chip">Анкети альтух</button>
-                <button class="chip">Анкети хлопців</button>
-                <button class="chip">Рівне / Квасилів</button>
-                <button class="chip filter-more"><i class="fa-solid fa-sliders"></i> Фільтри</button>
-            </div>
-
-            <!-- Swipe Dating Card Section -->
-            <div class="card-section">
-                <div class="dating-card">
-                    <div class="card-image" style="background-image: url('https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80');">
-                        <div class="card-badge-top">
-                            <span class="tag-status"><i class="fa-solid fa-bolt"></i> Рейтинг +124</span>
-                            <span class="tag-loc"><i class="fa-solid fa-location-dot"></i> Рівне</span>
-                            <button class="rating-btn" type="button" title="Оцінити профіль" aria-label="Оцінити профіль"><i class="fa-solid fa-star"></i></button>
+                <div class="feature-row">
+                    <article class="card-portrait left-card">
+                        <div class="portrait-frame">
+                            <div class="portrait-inner portrait-one"></div>
                         </div>
-                        <div class="card-overlay">
-                            <h2>Вікторія, 19 <i class="fa-solid fa-circle-check verified-icon"></i></h2>
-                            <p class="bio">Шукаю спільні поїздки на котеджі, альт-тусовки та розмови до ранку 🖤</p>
-                            <div class="tags-list">
-                                <span class="mini-tag">#альтушка</span>
-                                <span class="mini-tag">#котеджі</span>
-                                <span class="mini-tag">#архіви</span>
-                            </div>
-                        </div>
-                    </div>
+                        <div class="portrait-tag">Гота</div>
+                    </article>
 
-                    <!-- Action Controls -->
-                    <div class="card-actions">
-                        <button class="action-btn dislike-btn" title="Дізлайк (Рейтинг -)"><i class="fa-solid fa-xmark"></i></button>
-                        <button class="action-btn like-btn" title="Лайк (Рейтинг +)"><i class="fa-solid fa-heart"></i></button>
-                    </div>
+                    <article class="feature-copy">
+                        <h3>ОБРАНИЙ СТИЛЬ:<br>ВІДОБРАЖЕННЯ<br>ТВОЄЇ УНІКАЛЬНОСТІ.<br>ДВІ ПІДІБРАНІ АНКЕТИ<br>ДЛЯ ПОЧАТКУ.</h3>
+                        <p>Глибока індивідуальність, витончена подача та два характерні образи для першого знайомства.</p>
+                    </article>
+
+                    <article class="card-portrait right-card">
+                        <div class="portrait-frame">
+                            <div class="portrait-inner portrait-two"></div>
+                        </div>
+                        <div class="portrait-tag">Боно</div>
+                        <div class="portrait-subtag">Полістій<br>кулютур</div>
+                    </article>
                 </div>
-            </div>
-        </section>
-
-    </main>
-
+            </section>
+        </main>
+    </div>
 </body>
 </html>
