@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="uk">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LEROS — Пошук анкет</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="search.css">
+</head>
+<body>
+    <header class="profiles-header">
+        <a href="../altu-case.html" class="brand-box" aria-label="На головну">
+            <span class="brand-icon"><i class="fa-solid fa-heart"></i></span>
+            <span class="brand-text">LEROS</span>
+        </a>
+
+        <nav class="top-nav" aria-label="Навігація">
+            <a href="../altu-case.html">Кейси</a>
+            <a href="search.html" class="active">Пошук анкет</a>
+        </nav>
+
+        <div class="top-tools">
+            <button class="tool-btn" aria-label="Профіль"><i class="fa-solid fa-user"></i></button>
+        </div>
+    </header>
+
+    <main class="feed-container">
+        <div class="cards-viewport" id="cardsViewport">
+            <!-- Картки генеруються скриптом -->
+        </div>
+
+        <div class="controls-hint">
+            <i class="fa-solid fa-arrow-up"></i>
+            <span>Свайп вгору: <span class="key-badge">W</span> або <span class="key-badge">↑</span></span>
+            <i class="fa-solid fa-arrow-down"></i>
+            <span>Свайп вниз: <span class="key-badge">S</span> або <span class="key-badge">↓</span></span>
+            <span style="font-size: 0.75rem; opacity: 0.7;">або тягни мишкою</span>
+        </div>
+    </main>
+
+    <script src="search.js"></script>
+</body>
+</html>
