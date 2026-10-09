@@ -1,11 +1,19 @@
 :root {
-    --bg: #0f0d12;
-    --text: #f7f3f5;
-    --muted: #c7bcc6;
-    --border: rgba(255, 255, 255, 0.08);
-    --pink: #bd7d96;
-    --pink-dark: #a75471;
-    --shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+    --bg: #0E0B11;
+    --bg-soft: #17131D;
+    --panel: #17131D;
+    --text: #F5EEF0;
+    --muted: #C9BAC1;
+    --dusty-pink: #B8526F;
+    --rosewood: #A84B65;
+    --deep-charcoal: #0E0B11;
+    --dark-plum: #17131D;
+    --border-color: #251E2B;
+    --soft-white: #F5EEF0;
+    --border: var(--border-color);
+    --pink: var(--dusty-pink);
+    --pink-dark: var(--rosewood);
+    --shadow: 0 20px 40px rgba(14, 11, 17, 0.55);
 }
 
 * {
@@ -38,7 +46,7 @@ a {
     gap: 16px;
     min-height: 64px;
     padding-bottom: 10px;
-    border-bottom: 1px solid rgba(255,255,255,0.04);
+    border-bottom: 1px solid var(--border-color);
 }
 
 .brand-box {
@@ -58,7 +66,7 @@ a {
     align-items: center;
     justify-content: center;
     border-radius: 50%;
-    background: linear-gradient(135deg, #d8a3b2 0%, var(--pink-dark) 100%);
+    background: linear-gradient(135deg, var(--dusty-pink), var(--rosewood));
     font-size: 10px;
 }
 
@@ -75,7 +83,7 @@ a {
 }
 
 .top-nav a {
-    color: rgba(255,255,255,0.74);
+    color: var(--muted);
     text-decoration: none;
     font-size: 0.76rem;
     position: relative;
@@ -84,7 +92,7 @@ a {
 
 .top-nav a:hover,
 .top-nav a:focus-visible {
-    color: #fff;
+    color: var(--soft-white);
 }
 
 .top-nav a::after {
@@ -110,20 +118,6 @@ a {
     gap: 10px;
 }
 
-.tool-btn {
-    width: 28px;
-    height: 28px;
-    border-radius: 50%;
-    border: 1px solid var(--border);
-    background: rgba(255,255,255,0.02);
-    color: var(--text);
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    padding: 0;
-    cursor: pointer;
-}
-
 .profiles-main {
     padding-top: 18px;
 }
@@ -145,7 +139,7 @@ a {
 }
 
 .profile-card {
-    background: rgba(255,255,255,0.02);
+    background: var(--panel);
     border: 1px solid var(--border);
     border-radius: 20px;
     overflow: hidden;
@@ -156,7 +150,7 @@ a {
     position: relative;
     height: 390px;
     overflow: hidden;
-    background: #111117;
+    background: var(--deep-charcoal);
 }
 
 .profile-art::before,
@@ -167,61 +161,61 @@ a {
 }
 
 .art-steel {
-    background: linear-gradient(120deg, rgba(255,255,255,0.58) 0%, rgba(255,255,255,0.12) 12%, rgba(24,20,25,0.9) 32%, rgba(19,17,20,1) 100%), linear-gradient(135deg, #a5a9af 0%, #6d7076 30%, #d7dce1 54%, #595c60 100%);
+    background: linear-gradient(120deg, rgba(245,238,240,0.45) 0%, rgba(245,238,240,0.12) 12%, rgba(23,19,29,0.9) 32%, var(--deep-charcoal) 100%), linear-gradient(135deg, var(--dusty-pink) 0%, var(--rosewood) 45%, var(--dark-plum) 100%);
 }
 
 .art-steel::before {
     inset: 0 0 0 44%;
-    background: linear-gradient(180deg, rgba(87, 55, 45, 0.8), rgba(39, 25, 20, 0.9));
+    background: linear-gradient(180deg, rgba(184,82,111,0.8), rgba(37,30,43,0.9));
     transform: skewX(-28deg);
-    border-left: 2px solid rgba(214, 179, 155, 0.9);
+    border-left: 2px solid rgba(245,238,240,0.65);
 }
 
 .art-cyber {
-    background: linear-gradient(135deg, rgba(15,17,25,0.9), rgba(9,13,17,1));
+    background: linear-gradient(135deg, rgba(23,19,29,0.9), var(--deep-charcoal));
 }
 
 .art-cyber::before {
     inset: 19% 18% 17% 18%;
-    background: linear-gradient(135deg, rgba(159, 94, 120, 0.9), rgba(37, 104, 113, 0.9));
+    background: linear-gradient(135deg, rgba(184,82,111,0.9), rgba(168,75,101,0.9));
     clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
-    box-shadow: inset 0 0 0 1px rgba(255,255,255,0.18), 0 0 28px rgba(216, 161, 180, 0.4);
+    box-shadow: inset 0 0 0 1px rgba(245,238,240,0.18), 0 0 28px rgba(184,82,111,0.4);
 }
 
 .art-cyber::after {
     inset: 26% 26% 25% 26%;
-    background: linear-gradient(135deg, rgba(255,255,255,0.1), rgba(0,0,0,0.12));
+    background: linear-gradient(135deg, rgba(245,238,240,0.1), rgba(14,11,17,0.18));
     clip-path: polygon(50% 0%, 100% 38%, 82% 100%, 18% 100%, 0% 38%);
 }
 
 .art-ornament {
-    background: linear-gradient(180deg, rgba(20,17,21,0.96), rgba(7,9,12,0.98));
+    background: linear-gradient(180deg, rgba(23,19,29,0.96), rgba(14,11,17,0.98));
 }
 
 .art-ornament::before {
     inset: 9% 9% 9% 9%;
     background:
-        radial-gradient(circle at center, rgba(255,255,255,0.72) 0 18%, transparent 18.5%),
-        radial-gradient(circle at center, rgba(198, 161, 146, 0.7) 0 38%, rgba(88, 59, 52, 0.7) 42%, transparent 45%),
-        radial-gradient(circle at center, rgba(248,219,201,0.26) 0 54%, transparent 56%);
+        radial-gradient(circle at center, rgba(245,238,240,0.72) 0 18%, transparent 18.5%),
+        radial-gradient(circle at center, rgba(184,82,111,0.7) 0 38%, rgba(168,75,101,0.7) 42%, transparent 45%),
+        radial-gradient(circle at center, rgba(245,238,240,0.18) 0 54%, transparent 56%);
     border-radius: 50%;
-    box-shadow: inset 0 0 0 2px rgba(255,255,255,0.1);
+    box-shadow: inset 0 0 0 2px rgba(245,238,240,0.1);
 }
 
 .art-ornament::after {
     inset: 12%;
     border-radius: 50%;
-    background: repeating-radial-gradient(circle, rgba(255,255,255,0.08) 0 2px, transparent 2px 11px);
+    background: repeating-radial-gradient(circle, rgba(245,238,240,0.08) 0 2px, transparent 2px 11px);
     mix-blend-mode: screen;
 }
 
 .art-wood {
-    background: linear-gradient(135deg, rgba(255,219,164,0.22), rgba(131,94,62,0.14)), linear-gradient(90deg, #2d201a 0%, #734b2d 22%, #d5b07d 47%, #713f2a 70%, #211915 100%);
+    background: linear-gradient(135deg, rgba(184,82,111,0.22), rgba(168,75,101,0.14)), linear-gradient(90deg, var(--deep-charcoal) 0%, var(--rosewood) 30%, var(--dusty-pink) 52%, var(--rosewood) 72%, var(--dark-plum) 100%);
 }
 
 .art-wood::before {
     inset: 8% 10%;
-    background: repeating-linear-gradient(90deg, rgba(30,18,12,0.18) 0 2px, rgba(255,255,255,0.12) 2px 5px, rgba(35,20,12,0.2) 5px 8px), linear-gradient(135deg, rgba(255,255,255,0.14), rgba(0,0,0,0));
+    background: repeating-linear-gradient(90deg, rgba(14,11,17,0.18) 0 2px, rgba(245,238,240,0.12) 2px 5px, rgba(37,30,43,0.2) 5px 8px), linear-gradient(135deg, rgba(245,238,240,0.14), rgba(14,11,17,0));
     transform: skewX(-16deg);
     border-radius: 16px;
 }
@@ -242,20 +236,12 @@ a {
 
 .profile-price {
     margin: 18px 0 16px;
-    color: rgba(255,255,255,0.82);
+    color: var(--muted);
     font-size: 0.98rem;
 }
 
-.profile-card button {
+.profile-card .button {
     width: 100%;
-    border: none;
-    border-radius: 12px;
-    background: linear-gradient(135deg, #be7e97 0%, #a75c76 100%);
-    color: #fff;
-    font-weight: 700;
-    padding: 13px 16px;
-    cursor: pointer;
-    box-shadow: inset 0 1px 0 rgba(255,255,255,0.2);
 }
 
 @media (max-width: 1200px) {
