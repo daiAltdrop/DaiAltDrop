@@ -3,75 +3,132 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>LEROS — Кейси альтух</title>
+    <meta name="theme-color" content="#0E0B11">
+    <title>LEROS — Апгрейд альтух</title>
     <link rel="stylesheet" href="altu-case.css">
     <link rel="stylesheet" href="buttons.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script src="upgrade.js" defer></script>
 </head>
-<body class="profiles-body">
-    <div class="profiles-shell">
-        <header class="profiles-header">
-            <a href="index.html" class="brand-box" aria-label="На головну">
+<body class="upgrade-body">
+    <div class="upgrade-shell">
+        <header class="upgrade-header">
+            <a href="index.html" class="brand-box" aria-label="LEROS — на головну">
                 <span class="brand-icon"><i class="fa-solid fa-heart"></i></span>
                 <span class="brand-text">LEROS</span>
             </a>
 
-            <nav class="top-nav" aria-label="Навігація">
+            <nav class="top-nav" aria-label="Основна навігація">
                 <a href="index.html">Головна</a>
-                <a href="index.html">Продукти</a>
+                <a href="altu-case.html" class="active" aria-current="page">Апгрейд альтух</a>
                 <a href="index.html">Команда</a>
-                <a href="index.html">Блог</a>
                 <a href="index.html">Контакти</a>
-                <a href="index.html">Преміум</a>
             </nav>
 
-            <div class="top-tools" aria-label="Інструменти">
-                <button class="tool-btn" aria-label="Пошук"><i class="fa-solid fa-magnifying-glass"></i></button>
-                <button class="tool-btn" aria-label="Кошик"><i class="fa-solid fa-bag-shopping"></i></button>
-                <button class="tool-btn" aria-label="Профіль"><i class="fa-solid fa-user"></i></button>
-            </div>
+            <a class="login-button" href="index.html">
+                <i class="fa-solid fa-user"></i>
+                <span>Мій профіль</span>
+            </a>
         </header>
 
-        <main class="profiles-main">
-            <h1 class="profiles-title">КЕЙСИ АЛЬТУХ</h1>
-
-            <section class="profiles-grid" aria-label="Анкети альтух">
-                <article class="profile-card">
-                    <div class="profile-art art-steel"></div>
-                    <div class="profile-info">
-                        <h2>КЕЙС №1:<br>БЮДЖЕТНИЙ</h2>
-                        <p class="profile-price">Ціна: 100 гривень</p>
-                        <button class="button button--primary" type="button">Відкрити</button>
-                    </div>
-                </article>
-
-                <article class="profile-card">
-                    <div class="profile-art art-cyber"></div>
-                    <div class="profile-info">
-                        <h2>КЕЙС №2:<br>КІБЕР-ПРЕМІУМ</h2>
-                        <p class="profile-price">Ціна: 250 гривень</p>
-                        <button class="button button--primary" type="button">Відкрити</button>
-                    </div>
-                </article>
-
-                <article class="profile-card">
-                    <div class="profile-art art-ornament"></div>
-                    <div class="profile-info">
-                        <h2>КЕЙС №3:<br>МІСТИЧНА<br>ПОЕЗІЯ</h2>
-                        <p class="profile-price">Ціна: 500 гривень</p>
-                        <button class="button button--primary" type="button">Відкрити</button>
-                    </div>
-                </article>
-
-                <article class="profile-card">
-                    <div class="profile-art art-wood"></div>
-                    <div class="profile-info">
-                        <h2>КЕЙС №4:<br>ПОБУТОВЕ<br>ЩАСТЯ</h2>
-                        <p class="profile-price">Ціна: 1000 гривень</p>
-                        <button class="button button--primary" type="button">Відкрити</button>
-                    </div>
-                </article>
+        <main class="upgrade-main">
+            <section class="upgrade-intro">
+                <div>
+                    <h1>АПГРЕЙД <span>АЛЬТУХ</span></h1>
+                    <p class="intro-copy">Обери предмет, ціль і спробуй прокачати свій стиль.</p>
+                </div>
             </section>
+
+            <section class="upgrade-console" aria-label="Апгрейд предметів">
+                <div class="selected-item selected-source" aria-live="polite">
+                    <span class="selected-label">ТВІЙ ПРЕДМЕТ</span>
+                    <div class="selected-art" id="source-art" aria-hidden="true"><i class="fa-solid fa-box-open"></i></div>
+                    <strong id="source-name">Обери предмет</strong>
+                    <span class="selected-value" id="source-value">— балів</span>
+                </div>
+
+                <div class="upgrade-center">
+                    <div class="chance-ring" id="chance-ring" style="--chance: 0%">
+                        <div class="ring-ticks" aria-hidden="true"></div>
+                        <div class="spin-pointer" aria-hidden="true"><i class="fa-solid fa-caret-up"></i></div>
+                        <div class="ring-center">
+                            <i class="fa-solid fa-chevron-up ring-chevron"></i>
+                            <strong id="chance-value">—%</strong>
+                            <span>ШАНС УСПІХУ</span>
+                            <div class="chance-meter" aria-hidden="true"><span id="chance-meter-fill"></span></div>
+                            <small id="chance-detail">Шанс з’явиться після вибору</small>
+                        </div>
+                    </div>
+                    <p class="chance-note" id="chance-note">Обери два предмети</p>
+                    <button class="spin-mode-button" id="spin-mode-button" type="button" aria-pressed="false">
+                        <i class="fa-solid fa-forward"></i>
+                        Швидкий прокрут · 1 с
+                    </button>
+                </div>
+
+                <div class="selected-item selected-target" aria-live="polite">
+                    <span class="selected-label">БАЖАНИЙ ПРЕДМЕТ</span>
+                    <div class="selected-art" id="target-art" aria-hidden="true"><i class="fa-solid fa-gem"></i></div>
+                    <strong id="target-name">Обери ціль</strong>
+                    <span class="selected-value" id="target-value">— балів</span>
+                </div>
+
+                <button class="button button--primary upgrade-button" id="upgrade-button" type="button" disabled>
+                    <i class="fa-solid fa-angles-up"></i>
+                    ПРОКАЧАТИ
+                </button>
+                <p class="upgrade-status" id="upgrade-status" role="status" aria-live="polite">
+                    Демо-режим — без реальних предметів і балів.
+                </p>
+            </section>
+
+            <div class="selection-grid">
+                <section class="item-section" aria-labelledby="inventory-heading">
+                    <div class="section-heading">
+                        <h2 id="inventory-heading">Мої предмети</h2>
+                    </div>
+                    <div class="item-grid">
+                        <button class="item-card" type="button" data-source-item data-name="Бюджетний кейс" data-price="100" data-style="steel" aria-pressed="false">
+                            <span class="item-art art-steel"><i class="fa-solid fa-box"></i></span>
+                            <span class="item-name">Бюджетний кейс</span>
+                            <span class="item-price"><i class="fa-solid fa-coins"></i> 100 балів</span>
+                        </button>
+                        <button class="item-card" type="button" data-source-item data-name="Кібер-преміум" data-price="250" data-style="cyber" aria-pressed="false">
+                            <span class="item-art art-cyber"><i class="fa-solid fa-bolt"></i></span>
+                            <span class="item-name">Кібер-преміум</span>
+                            <span class="item-price"><i class="fa-solid fa-coins"></i> 250 балів</span>
+                        </button>
+                        <button class="item-card" type="button" data-source-item data-name="Містична поезія" data-price="500" data-style="ornament" aria-pressed="false">
+                            <span class="item-art art-ornament"><i class="fa-solid fa-moon"></i></span>
+                            <span class="item-name">Містична поезія</span>
+                            <span class="item-price"><i class="fa-solid fa-coins"></i> 500 балів</span>
+                        </button>
+                    </div>
+                </section>
+
+                <section class="item-section" aria-labelledby="targets-heading">
+                    <div class="section-heading">
+                        <h2 id="targets-heading">Предмети для апгрейду</h2>
+                    </div>
+                    <div class="item-grid">
+                        <button class="item-card" type="button" data-target-item data-name="Кібер-преміум" data-price="250" data-style="cyber" aria-pressed="false">
+                            <span class="item-art art-cyber"><i class="fa-solid fa-bolt"></i></span>
+                            <span class="item-name">Кібер-преміум</span>
+                            <span class="item-price"><i class="fa-solid fa-coins"></i> 250 балів</span>
+                        </button>
+                        <button class="item-card" type="button" data-target-item data-name="Містична поезія" data-price="500" data-style="ornament" aria-pressed="false">
+                            <span class="item-art art-ornament"><i class="fa-solid fa-moon"></i></span>
+                            <span class="item-name">Містична поезія</span>
+                            <span class="item-price"><i class="fa-solid fa-coins"></i> 500 балів</span>
+                        </button>
+                        <button class="item-card" type="button" data-target-item data-name="Побутове щастя" data-price="1000" data-style="wood" aria-pressed="false">
+                            <span class="item-art art-wood"><i class="fa-solid fa-house"></i></span>
+                            <span class="item-name">Побутове щастя</span>
+                            <span class="item-price"><i class="fa-solid fa-coins"></i> 1 000 балів</span>
+                        </button>
+                    </div>
+                </section>
+            </div>
         </main>
     </div>
 </body>
