@@ -11,6 +11,8 @@ namespace Lerros_serva.Data
             : base(options)
         {
         }
+
+        public DbSet<Profile> Profiles { get; set; } = null!;
     }
 
     public enum Gender
