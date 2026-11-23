@@ -129,6 +129,17 @@ a {
     gap: 10px;
 }
 
+.tools .tool-btn {
+    border-color: transparent;
+    background: transparent;
+}
+
+.tools .tool-btn:hover {
+    border-color: transparent;
+    background: transparent;
+    color: var(--dusty-pink);
+}
+
 .home-main {
     padding-top: 20px;
 }

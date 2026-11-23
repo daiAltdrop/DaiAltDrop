@@ -1,0 +1,295 @@
+body.team-body {
+    background:
+        radial-gradient(circle at top left, rgba(184, 82, 111, 0.18), transparent 25%),
+        radial-gradient(circle at bottom right, rgba(130, 91, 110, 0.15), transparent 32%),
+        var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+}
+
+.team-shell {
+    padding-bottom: 54px;
+}
+
+.team-main {
+    padding-top: 32px;
+}
+
+.team-intro {
+    display: grid;
+    grid-template-columns: 1.3fr 0.9fr;
+    gap: 32px;
+    align-items: stretch;
+    margin-bottom: 42px;
+}
+
+.intro-copy,
+.intro-panel,
+.member-card,
+.process-card,
+.team-cta {
+    background: rgba(23, 19, 29, 0.9);
+    border: 1px solid var(--border-color);
+    box-shadow: var(--shadow);
+}
+
+.intro-copy {
+    padding: clamp(28px, 4vw, 46px);
+    border-radius: var(--radius-lg);
+}
+
+.eyebrow {
+    margin-bottom: 18px;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--dusty-pink);
+    font-weight: 700;
+}
+
+.intro-copy h1 {
+    margin-bottom: 18px;
+    font-size: clamp(2.5rem, 4vw, 4.5rem);
+    line-height: 0.9;
+    letter-spacing: -0.08em;
+    text-transform: uppercase;
+}
+
+.lead {
+    max-width: 620px;
+    color: var(--muted);
+    font-size: 1.08rem;
+    line-height: 1.7;
+}
+
+.intro-actions {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 16px;
+    margin-top: 26px;
+}
+
+.intro-panel {
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+    padding: 24px;
+    border-radius: var(--radius-lg);
+}
+
+.stat-card {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding: 20px 18px;
+    border-radius: 18px;
+    background: linear-gradient(135deg, rgba(184, 82, 111, 0.18), rgba(37, 30, 43, 0.7));
+    border: 1px solid rgba(184, 82, 111, 0.2);
+}
+
+.stat-number {
+    font-size: clamp(2rem, 3vw, 3rem);
+    line-height: 1;
+    font-weight: 900;
+    letter-spacing: -0.06em;
+    color: var(--soft-white);
+}
+
+.stat-label {
+    color: var(--muted);
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.team-section {
+    margin-bottom: 42px;
+}
+
+.section-heading {
+    margin-bottom: 24px;
+}
+
+.section-heading h2 {
+    font-size: clamp(2.1rem, 3vw, 3.3rem);
+    line-height: 1;
+    letter-spacing: -0.06em;
+    text-transform: uppercase;
+}
+
+.member-grid {
+    display: grid;
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 24px;
+}
+
+.member-card {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+    border-radius: 26px;
+}
+
+.member-portrait {
+    position: relative;
+    height: 260px;
+    background: linear-gradient(135deg, rgba(184, 82, 111, 0.66), rgba(37, 30, 43, 0.9) 52%, rgba(14, 11, 17, 1));
+    border-bottom: 1px solid rgba(245, 238, 240, 0.08);
+}
+
+.member-portrait::before,
+.member-portrait::after {
+    content: "";
+    position: absolute;
+    border-radius: 50%;
+}
+
+.member-portrait::before {
+    width: 120px;
+    height: 120px;
+    top: 24%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: rgba(245, 238, 240, 0.76);
+    box-shadow: inset 0 0 0 12px rgba(184, 82, 111, 0.45);
+}
+
+.member-portrait::after {
+    width: 180px;
+    height: 115px;
+    left: 50%;
+    bottom: 18%;
+    transform: translateX(-50%);
+    background: linear-gradient(180deg, rgba(245, 238, 240, 0.14), rgba(14, 11, 17, 0.6));
+    border-radius: 45% 45% 18% 18%;
+}
+
+.portrait-one {
+    background: linear-gradient(135deg, rgba(184, 82, 111, 0.72), rgba(64, 23, 35, 0.9)), linear-gradient(180deg, rgba(245, 238, 240, 0.1), rgba(14, 11, 17, 0.8));
+}
+
+.portrait-two {
+    background: linear-gradient(135deg, rgba(160, 67, 92, 0.7), rgba(30, 22, 33, 0.92)), linear-gradient(180deg, rgba(245, 238, 240, 0.08), rgba(14, 11, 17, 0.8));
+}
+
+.portrait-three {
+    background: linear-gradient(135deg, rgba(220, 120, 154, 0.68), rgba(37, 30, 43, 0.96)), linear-gradient(180deg, rgba(245, 238, 240, 0.1), rgba(14, 11, 17, 0.8));
+}
+
+.portrait-four {
+    background: linear-gradient(135deg, rgba(194, 97, 128, 0.7), rgba(21, 16, 24, 0.94)), linear-gradient(180deg, rgba(245, 238, 240, 0.08), rgba(14, 11, 17, 0.8));
+}
+
+.member-body {
+    padding: 22px 22px 24px;
+}
+
+.member-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 10px;
+    color: var(--muted);
+    font-size: 0.72rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+}
+
+.member-role {
+    color: var(--dusty-pink);
+    font-weight: 700;
+}
+
+.member-tag {
+    color: var(--muted);
+}
+
+.member-body h3 {
+    margin-bottom: 10px;
+    font-size: clamp(1.5rem, 2vw, 2rem);
+    line-height: 1.06;
+    letter-spacing: -0.05em;
+    text-transform: uppercase;
+}
+
+.member-body p {
+    color: var(--muted);
+    line-height: 1.65;
+}
+
+.team-cta {
+    display: grid;
+    grid-template-columns: 0.9fr 1.1fr;
+    gap: 24px;
+    padding: clamp(24px, 4vw, 32px);
+    border-radius: var(--radius-lg);
+    align-items: center;
+}
+
+.cta-copy h2 {
+    font-size: clamp(2rem, 3vw, 3rem);
+    line-height: 1;
+    letter-spacing: -0.06em;
+    text-transform: uppercase;
+}
+
+.process-grid {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 18px;
+}
+
+.process-card {
+    border-radius: 20px;
+    padding: 22px 18px;
+    background: linear-gradient(180deg, rgba(37, 30, 43, 0.9), rgba(23, 19, 29, 0.8));
+}
+
+.process-card span {
+    display: inline-flex;
+    margin-bottom: 12px;
+    color: var(--dusty-pink);
+    font-size: 0.8rem;
+    letter-spacing: 0.12em;
+    font-weight: 800;
+}
+
+.process-card h3 {
+    margin-bottom: 10px;
+    font-size: 1.4rem;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+}
+
+.process-card p {
+    color: var(--muted);
+    line-height: 1.6;
+}
+
+@media (max-width: 980px) {
+    .team-intro,
+    .team-cta {
+        grid-template-columns: 1fr;
+    }
+
+    .process-grid,
+    .member-grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 640px) {
+    .page-shell {
+        padding-left: 14px;
+        padding-right: 14px;
+    }
+
+    .intro-actions {
+        flex-direction: column;
+    }
+
+    .intro-actions a {
+        width: 100%;
+        justify-content: center;
+    }
+}

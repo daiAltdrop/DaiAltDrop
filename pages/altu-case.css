@@ -118,6 +118,17 @@ a {
     gap: 10px;
 }
 
+.top-tools .tool-btn {
+    border-color: transparent;
+    background: transparent;
+}
+
+.top-tools .tool-btn:hover {
+    border-color: transparent;
+    background: transparent;
+    color: var(--dusty-pink);
+}
+
 .profiles-main {
     padding-top: 18px;
 }
