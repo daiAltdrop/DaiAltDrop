@@ -13,6 +13,7 @@ namespace Lerros_serva.Data
         }
 
         public DbSet<Profile> Profiles { get; set; } = null!;
+        public DbSet<Account> Accounts { get; set; }
     }
 
     public enum Gender
@@ -47,5 +48,21 @@ namespace Lerros_serva.Data
 
         [Required]
         public DateOnly Birthdate { get; set; }
+    }
+
+    [Index(nameof(Email), IsUnique = true)]
+    [Index(nameof(Phone), IsUnique = true)]
+    public class Account
+    {
+        [Key]
+        public int Id { get; set; }
+
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
+        public string Email { get; set; }
+        public string Phone { get; set; }
+        public string PasswordHash { get; set; }
+        public string? Avatar { get; set; } // ? дозволяє полю бути пустим (null), якщо аватарки ще немає
+        public string Login { get; set; }
     }
 }
